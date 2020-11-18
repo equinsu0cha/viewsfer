@@ -1,0 +1,38 @@
+{
+  "name": "viewsfer",
+  "version": "0.1.8",
+  "private": true,
+  "productName": "Viewsfer",
+  "scripts": {
+    "serve": "quasar dev",
+    "build": "quasar build",
+    "test:unit": "quasar test --unit jest"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.9.10",
+    "axios": "^0.21.0",
+    "dotenv": "^8.2.0",
+    "qrcode.vue": "^1.7.0",
+    "quasar": "^1.14.2"
+  },
+  "devDependencies": {
+    "@quasar/app": "^2.1.5",
+    "@quasar/cli": "^1.1.2",
+    "@quasar/quasar-app-extension-testing": "^1.0.0",
+    "@quasar/quasar-app-extension-testing-unit-jest": "^1.0.1",
+    "core-js": "^3.6.5",
+    "flush-promises": "^1.0.2",
+    "fs-extra": "^9.0.1"
+  },
+  "browserslist": [
+    "last 4 Chrome versions",
+    "last 4 Firefox versions",
+    "last 2 Edge versions",
+    "last 3 Safari versions",
+    "last 3 Android versions",
+    "last 3 ChromeAndroid versions",
+    "last 3 FirefoxAndroid versions",
+    "last 3 iOS versions",
+    "last 2 Opera versions"
+  ]
+}

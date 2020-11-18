@@ -1,0 +1,3 @@
+black
+Werkzeug
+django-extensions
