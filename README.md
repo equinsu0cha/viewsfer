@@ -1,9 +1,6 @@
 # Viewsfer
 
-Remote monitoring & management tool for Windows computers, built with Django and Vue.
-
-
-### [Discord Chat](https://discord.gg/upGTkWp)
+Remote monitoring & management tool for Windows computers.
 
 ## Features
 
@@ -77,7 +74,7 @@ From the app's dashboard, choose Agents > Install Agent to generate an installer
 
 
 ## Using another ssl certificate
-During the install you can opt out of using the Let's Encrypt certificate. If you do this the script will create a self-signed certificate, so that https continues to work. You can replace the certificates in /certs/example.com/(privkey.pem | pubkey.pem) with your own. 
+During the install you can opt out of using the Let's Encrypt certificate. If you do this the script will create a self-signed certificate, so that https continues to work. You can replace the certificates in accounts/certs/(privkey.pem | pubkey.pem) with your own. 
 
 If you are migrating from Let's Encrypt to another certificate provider, you can create the /certs directory and copy your certificates there. It is recommended to do this because this directory will be backed up with the backup script provided. Then modify the nginx configurations to use your new certificates
 
