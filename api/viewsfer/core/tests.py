@@ -1,8 +1,8 @@
-from tacticalrmm.test import TacticalTestCase
+from viewsfer.test import ViewsferTestCase
 from core.tasks import core_maintenance_tasks
 
 
-class TestCoreTasks(TacticalTestCase):
+class TestCoreTasks(ViewsferTestCase):
     def setUp(self):
         self.setup_coresettings()
         self.authenticate()

@@ -8,7 +8,7 @@ from core.models import CoreSettings
 from rest_framework.authtoken.models import Token
 
 
-class TacticalTestCase(TestCase):
+class ViewsferTestCase(TestCase):
     def authenticate(self):
         self.john = User(username="john")
         self.john.set_password("hunter2")

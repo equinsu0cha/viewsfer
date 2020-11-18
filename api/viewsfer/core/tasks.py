@@ -3,7 +3,7 @@ from loguru import logger
 
 from django.conf import settings
 from django.utils import timezone as djangotime
-from tacticalrmm.celery import app
+from viewsfer.celery import app
 from accounts.models import User
 from agents.models import Agent
 from autotasks.models import AutomatedTask

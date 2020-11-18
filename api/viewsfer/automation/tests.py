@@ -1,5 +1,5 @@
 from unittest.mock import patch
-from tacticalrmm.test import TacticalTestCase
+from viewsfer.test import ViewsferTestCase
 from model_bakery import baker, seq
 from itertools import cycle
 from agents.models import Agent
@@ -19,7 +19,7 @@ from .serializers import (
 )
 
 
-class TestPolicyViews(TacticalTestCase):
+class TestPolicyViews(ViewsferTestCase):
     def setUp(self):
         self.authenticate()
         self.setup_coresettings()
@@ -693,7 +693,7 @@ class TestPolicyViews(TacticalTestCase):
         self.check_not_authenticated("delete", url)
 
 
-class TestPolicyTasks(TacticalTestCase):
+class TestPolicyTasks(ViewsferTestCase):
     def setUp(self):
         self.authenticate()
         self.setup_coresettings()

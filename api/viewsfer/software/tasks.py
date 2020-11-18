@@ -1,7 +1,7 @@
 import string
 from time import sleep
 from loguru import logger
-from tacticalrmm.celery import app
+from viewsfer.celery import app
 from django.conf import settings
 from django.utils import timezone as djangotime
 

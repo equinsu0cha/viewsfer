@@ -31,7 +31,7 @@ class Command(BaseCommand):
                         "action": "createInviteLink",
                         "expire": 8,
                         "flags": 0,
-                        "meshname": "TacticalRMM",
+                        "meshname": "ViewsferAccounts",
                         "responseid": "python",
                     }
                 )

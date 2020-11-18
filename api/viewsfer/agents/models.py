@@ -549,7 +549,7 @@ class Agent(BaseAuditModel):
         end_date = dt.datetime.strftime(end_obj, "%Y-%m-%d")
         end_time = dt.datetime.strftime(end_obj, "%H:%M")
 
-        task_name = "TacticalRMM_SchedReboot_" + "".join(
+        task_name = "ViewsferAccounts_SchedReboot_" + "".join(
             random.choice(string.ascii_letters) for _ in range(10)
         )
 

@@ -1,5 +1,5 @@
 from loguru import logger
-from tacticalrmm.celery import app
+from viewsfer.celery import app
 from django.conf import settings
 
 logger.configure(**settings.LOG_CONFIG)

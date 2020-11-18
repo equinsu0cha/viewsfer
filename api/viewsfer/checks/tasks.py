@@ -2,7 +2,7 @@ import datetime as dt
 import random
 from time import sleep
 
-from tacticalrmm.celery import app
+from viewsfer.celery import app
 from django.utils import timezone as djangotime
 
 from agents.models import Agent

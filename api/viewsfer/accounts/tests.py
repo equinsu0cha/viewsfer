@@ -1,11 +1,11 @@
 from unittest.mock import patch
 from django.test import override_settings
 
-from tacticalrmm.test import TacticalTestCase
+from viewsfer.test import ViewsferTestCase
 from accounts.models import User
 
 
-class TestAccounts(TacticalTestCase):
+class TestAccounts(ViewsferTestCase):
     def setUp(self):
         self.client_setup()
         self.bob = User(username="bob")
@@ -73,7 +73,7 @@ class TestAccounts(TacticalTestCase):
         self.assertIn("token", r.data.keys())
 
 
-class TestGetAddUsers(TacticalTestCase):
+class TestGetAddUsers(ViewsferTestCase):
     def setUp(self):
         self.authenticate()
         self.setup_coresettings()
@@ -120,7 +120,7 @@ class TestGetAddUsers(TacticalTestCase):
         self.check_not_authenticated("post", url)
 
 
-class GetUpdateDeleteUser(TacticalTestCase):
+class GetUpdateDeleteUser(ViewsferTestCase):
     def setUp(self):
         self.authenticate()
         self.setup_coresettings()
@@ -167,7 +167,7 @@ class GetUpdateDeleteUser(TacticalTestCase):
         self.check_not_authenticated("delete", url)
 
 
-class TestUserAction(TacticalTestCase):
+class TestUserAction(ViewsferTestCase):
     def setUp(self):
         self.authenticate()
         self.setup_coresettings()
@@ -204,7 +204,7 @@ class TestUserAction(TacticalTestCase):
         self.check_not_authenticated("patch", url)
 
 
-class TestTOTPSetup(TacticalTestCase):
+class TestTOTPSetup(ViewsferTestCase):
     def setUp(self):
         self.authenticate()
         self.setup_coresettings()

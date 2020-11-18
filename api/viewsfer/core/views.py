@@ -11,7 +11,7 @@ from rest_framework.views import APIView
 
 from .models import CoreSettings
 from .serializers import CoreSettingsSerializer
-from tacticalrmm.utils import notify_error
+from viewsfer.utils import notify_error
 from automation.tasks import generate_all_agent_checks_task
 
 
@@ -77,7 +77,7 @@ def dashboard_info(request):
 def email_test(request):
     core = CoreSettings.objects.first()
     r = core.send_mail(
-        subject="Test from Tactical RMM", body="This is a test message", test=True
+        subject="Test from Viewsfer RMM", body="This is a test message", test=True
     )
 
     if not isinstance(r, bool) and isinstance(r, str):

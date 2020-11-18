@@ -2,13 +2,13 @@ import json
 import os
 from pathlib import Path
 from django.conf import settings
-from tacticalrmm.test import TacticalTestCase
+from viewsfer.test import ViewsferTestCase
 from model_bakery import baker
 from .serializers import ScriptSerializer
 from .models import Script
 
 
-class TestScriptViews(TacticalTestCase):
+class TestScriptViews(ViewsferTestCase):
     def setUp(self):
         self.authenticate()
 

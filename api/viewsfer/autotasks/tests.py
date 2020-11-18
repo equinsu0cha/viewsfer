@@ -2,7 +2,7 @@ from unittest.mock import patch, call
 from model_bakery import baker
 from django.utils import timezone as djangotime
 
-from tacticalrmm.test import TacticalTestCase
+from viewsfer.test import ViewsferTestCase
 
 from .models import AutomatedTask
 from logs.models import PendingAction
@@ -10,7 +10,7 @@ from .serializers import AutoTaskSerializer
 from .tasks import remove_orphaned_win_tasks, run_win_task, create_win_task_schedule
 
 
-class TestAutotaskViews(TacticalTestCase):
+class TestAutotaskViews(ViewsferTestCase):
     def setUp(self):
         self.authenticate()
         self.setup_coresettings()
@@ -200,7 +200,7 @@ class TestAutotaskViews(TacticalTestCase):
         self.check_not_authenticated("get", url)
 
 
-class TestAutoTaskCeleryTasks(TacticalTestCase):
+class TestAutoTaskCeleryTasks(ViewsferTestCase):
     def setUp(self):
         self.authenticate()
         self.setup_coresettings()
@@ -236,9 +236,9 @@ class TestAutoTaskCeleryTasks(TacticalTestCase):
             "GoogleUpdateTaskMachineUA",
             "OneDrive Standalone Update Task-S-1-5-21-717461175-241712648-1206041384-1001",
             self.task1.win_task_name,
-            "TacticalRMM_fixmesh",
-            "TacticalRMM_SchedReboot_jk324kajd",
-            "TacticalRMM_iggrLcOaldIZnUzLuJWPLNwikiOoJJHHznb",  # orphaned task
+            "ViewsferAccounts_fixmesh",
+            "ViewsferAccounts_SchedReboot_jk324kajd",
+            "ViewsferAccounts_iggrLcOaldIZnUzLuJWPLNwikiOoJJHHznb",  # orphaned task
         ]
 
         self.calls = [
@@ -246,7 +246,7 @@ class TestAutoTaskCeleryTasks(TacticalTestCase):
             call(
                 timeout=20,
                 func="task.delete_task",
-                arg=["name=TacticalRMM_iggrLcOaldIZnUzLuJWPLNwikiOoJJHHznb"],
+                arg=["name=ViewsferAccounts_iggrLcOaldIZnUzLuJWPLNwikiOoJJHHznb"],
             ),
         ]
 
@@ -266,7 +266,7 @@ class TestAutoTaskCeleryTasks(TacticalTestCase):
 
         # no orphaned tasks
         salt_api_cmd.reset_mock()
-        win_tasks.remove("TacticalRMM_iggrLcOaldIZnUzLuJWPLNwikiOoJJHHznb")
+        win_tasks.remove("ViewsferAccounts_iggrLcOaldIZnUzLuJWPLNwikiOoJJHHznb")
         salt_api_cmd.side_effect = [win_tasks, True]
         ret = remove_orphaned_win_tasks.s(self.agent.pk).apply()
         self.assertEqual(salt_api_cmd.call_count, 1)
@@ -309,9 +309,9 @@ class TestAutoTaskCeleryTasks(TacticalTestCase):
                 f"name={task_name}",
                 "force=True",
                 "action_type=Execute",
-                'cmd="C:\\Program Files\\TacticalAgent\\tacticalrmm.exe"',
+                'cmd="C:\\Program Files\\ViewsferAgent\\viewsfer.exe"',
                 f'arguments="-m taskrunner -p {self.task1.pk}"',
-                "start_in=C:\\Program Files\\TacticalAgent",
+                "start_in=C:\\Program Files\\ViewsferAgent",
                 "trigger_type=Weekly",
                 'start_time="21:55"',
                 "ac_only=False",
@@ -373,9 +373,9 @@ class TestAutoTaskCeleryTasks(TacticalTestCase):
                 f"name={task_name}",
                 "force=True",
                 "action_type=Execute",
-                'cmd="C:\\Program Files\\TacticalAgent\\tacticalrmm.exe"',
+                'cmd="C:\\Program Files\\ViewsferAgent\\viewsfer.exe"',
                 f'arguments="-m taskrunner -p {self.task2.pk}"',
-                "start_in=C:\\Program Files\\TacticalAgent",
+                "start_in=C:\\Program Files\\ViewsferAgent",
                 "trigger_type=Once",
                 f'start_date="{run_time_date.strftime("%Y-%m-%d")}"',
                 f'start_time="{run_time_date.strftime("%H:%M")}"',
@@ -407,9 +407,9 @@ class TestAutoTaskCeleryTasks(TacticalTestCase):
                 f"name={task_name}",
                 "force=True",
                 "action_type=Execute",
-                'cmd="C:\\Program Files\\TacticalAgent\\tacticalrmm.exe"',
+                'cmd="C:\\Program Files\\ViewsferAgent\\viewsfer.exe"',
                 f'arguments="-m taskrunner -p {self.task3.pk}"',
-                "start_in=C:\\Program Files\\TacticalAgent",
+                "start_in=C:\\Program Files\\ViewsferAgent",
                 "trigger_type=Once",
                 f'start_date="{self.task3.run_time_date.strftime("%Y-%m-%d")}"',
                 f'start_time="{self.task3.run_time_date.strftime("%H:%M")}"',
@@ -440,9 +440,9 @@ class TestAutoTaskCeleryTasks(TacticalTestCase):
                 f"name={task_name}",
                 "force=True",
                 "action_type=Execute",
-                'cmd="C:\\Program Files\\TacticalAgent\\tacticalrmm.exe"',
+                'cmd="C:\\Program Files\\ViewsferAgent\\viewsfer.exe"',
                 f'arguments="-m taskrunner -p {self.task4.pk}"',
-                "start_in=C:\\Program Files\\TacticalAgent",
+                "start_in=C:\\Program Files\\ViewsferAgent",
                 "trigger_type=Once",
                 'start_date="1975-01-01"',
                 'start_time="01:00"',
@@ -470,9 +470,9 @@ class TestAutoTaskCeleryTasks(TacticalTestCase):
                 f"name={task_name}",
                 "force=True",
                 "action_type=Execute",
-                'cmd="C:\\Program Files\\TacticalAgent\\tacticalrmm.exe"',
+                'cmd="C:\\Program Files\\ViewsferAgent\\viewsfer.exe"',
                 f'arguments="-m taskrunner -p {self.task5.pk}"',
-                "start_in=C:\\Program Files\\TacticalAgent",
+                "start_in=C:\\Program Files\\ViewsferAgent",
                 "trigger_type=Once",
                 'start_date="1975-01-01"',
                 'start_time="01:00"',

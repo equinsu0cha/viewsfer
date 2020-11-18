@@ -1,11 +1,11 @@
-from tacticalrmm.test import TacticalTestCase
+from viewsfer.test import ViewsferTestCase
 from model_bakery import baker
 from unittest.mock import patch
 from .serializers import ServicesSerializer
 from agents.models import Agent
 
 
-class TestServiceViews(TacticalTestCase):
+class TestServiceViews(ViewsferTestCase):
     def setUp(self):
         self.authenticate()
 

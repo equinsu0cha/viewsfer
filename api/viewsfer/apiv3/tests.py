@@ -2,13 +2,13 @@ import os
 import json
 
 from django.conf import settings
-from tacticalrmm.test import TacticalTestCase
+from viewsfer.test import ViewsferTestCase
 from unittest.mock import patch
 from model_bakery import baker
 from itertools import cycle
 
 
-class TestAPIv3(TacticalTestCase):
+class TestAPIv3(ViewsferTestCase):
     def setUp(self):
         self.authenticate()
         self.setup_coresettings()
@@ -68,7 +68,7 @@ class TestAPIv3(TacticalTestCase):
         url = f"/api/v3/sysinfo/"
         with open(
             os.path.join(
-                settings.BASE_DIR, "tacticalrmm/test_data/wmi_python_agent.json"
+                settings.BASE_DIR, "viewsfer/test_data/wmi_python_agent.json"
             )
         ) as f:
             wmi_py = json.load(f)

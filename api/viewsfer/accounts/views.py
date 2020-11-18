@@ -15,7 +15,7 @@ from rest_framework import status
 from .models import User
 from agents.models import Agent
 from logs.models import AuditLog
-from tacticalrmm.utils import notify_error
+from viewsfer.utils import notify_error
 
 from .serializers import UserSerializer, TOTPSetupSerializer
 

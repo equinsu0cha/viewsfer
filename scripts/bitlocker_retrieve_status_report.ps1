@@ -1,4 +1,4 @@
-## Copied from https://github.com/ThatsNASt/tacticalrmm to add to new pull request for https://github.com/wh1te909/tacticalrmm
+## Copied from https://github.com/ThatsNASt/viewsfer to add to new pull request for https://github.com/wh1te909/viewsfer
 ## Remvoed the use of the alias sleep, replaced with Start-Sleep.
 $ErrorActionPreference = "Stop"
 $log = "BitlockerReport.txt"

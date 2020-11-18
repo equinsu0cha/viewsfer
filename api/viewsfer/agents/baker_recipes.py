@@ -18,7 +18,7 @@ def generate_agent_id(hostname):
 
 def get_wmi_data():
     with open(
-        os.path.join(settings.BASE_DIR, "tacticalrmm/test_data/wmi_python_agent.json")
+        os.path.join(settings.BASE_DIR, "viewsfer/test_data/wmi_python_agent.json")
     ) as f:
         return json.load(f)
 

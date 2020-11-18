@@ -39,7 +39,7 @@ from .tasks import uninstall_agent_task, send_agent_update_task
 from winupdate.tasks import bulk_check_for_updates_task
 from scripts.tasks import run_script_bg_task, run_bulk_script_task
 
-from tacticalrmm.utils import notify_error
+from viewsfer.utils import notify_error
 
 logger.configure(**settings.LOG_CONFIG)
 
@@ -555,7 +555,7 @@ def install_agent(request):
             ">",
             "NUL",
             "&&",
-            r'"C:\Program Files\TacticalAgent\tacticalrmm.exe"',
+            r'"C:\Program Files\ViewsferAgent\viewsfer.exe"',
             "-m",
             "install",
             "--api",
@@ -737,7 +737,7 @@ def recover_mesh(request, pk):
         timeout=60,
         func="cmd.run",
         kwargs={
-            "cmd": r'"C:\\Program Files\\TacticalAgent\\tacticalrmm.exe" -m recovermesh',
+            "cmd": r'"C:\\Program Files\\ViewsferAgent\\viewsfer.exe" -m recovermesh',
             "timeout": 55,
         },
     )

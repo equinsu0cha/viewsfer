@@ -800,7 +800,7 @@
         "id": 82
     },
     {
-        "name": "tacticalrmm.exe",
+        "name": "viewsfer.exe",
         "cpu_percent": 0.0,
         "memory_percent": 0.019854272502852533,
         "pid": 4696,
@@ -1020,7 +1020,7 @@
         "id": 104
     },
     {
-        "name": "tacticalrmm.exe",
+        "name": "viewsfer.exe",
         "cpu_percent": 0.0,
         "memory_percent": 0.023025468641651836,
         "pid": 6908,

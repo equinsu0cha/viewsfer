@@ -1,11 +1,11 @@
 from datetime import datetime, timedelta
 from model_bakery import baker, seq
-from tacticalrmm.test import TacticalTestCase
+from viewsfer.test import ViewsferTestCase
 from .serializers import PendingActionSerializer
 from unittest.mock import patch
 
 
-class TestAuditViews(TacticalTestCase):
+class TestAuditViews(ViewsferTestCase):
     def setUp(self):
         self.authenticate()
         self.setup_coresettings()
@@ -208,7 +208,7 @@ class TestAuditViews(TacticalTestCase):
         self.check_not_authenticated("delete", url)
 
 
-class TestLogsTasks(TacticalTestCase):
+class TestLogsTasks(ViewsferTestCase):
     def setUp(self):
         self.authenticate()
 

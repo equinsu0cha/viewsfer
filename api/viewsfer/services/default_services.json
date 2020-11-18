@@ -1340,13 +1340,13 @@
         "display_name": "salt-minion"
     },
     {
-        "name": "tacticalagent",
-        "description": "Tactical RMM Monitoring Agent",
-        "display_name": "Tactical RMM Agent"
+        "name": "viewsferagent",
+        "description": "Viewsfer RMM Monitoring Agent",
+        "display_name": "Viewsfer RMM Agent"
     },
     {
         "name": "checkrunner",
-        "description": "Tactical Agent Background Check Runner",
-        "display_name": "Tactical Agent Check Runner"
+        "description": "Viewsfer Agent Background Check Runner",
+        "display_name": "Viewsfer Agent Check Runner"
     }
 ]

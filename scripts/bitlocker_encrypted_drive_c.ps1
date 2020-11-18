@@ -1,4 +1,4 @@
-## Copied from https://github.com/ThatsNASt/tacticalrmm to add to new pull request for https://github.com/wh1te909/tacticalrmm
+## Copied from https://github.com/ThatsNASt/viewsfer to add to new pull request for https://github.com/wh1te909/viewsfer
 
 $x = Get-WMIObject -Namespace "root/CIMV2/Security/MicrosoftVolumeEncryption" -query "SELECT * FROM Win32_EncryptableVolume WHERE DriveLetter='C:'";
 $y = $x.GetProtectionStatus().ProtectionStatus

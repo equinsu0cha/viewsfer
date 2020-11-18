@@ -1,8 +1,8 @@
 const { description } = require('../package')
 
 module.exports = {
-  base: '/tacticalrmm/',
-  title: 'Tactical RMM',
+  base: '/viewsfer/',
+  title: 'Viewsfer RMM',
   description: description,
 
   head: [

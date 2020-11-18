@@ -8,7 +8,7 @@ from packaging import version as pyver
 from django.conf import settings
 
 
-from tacticalrmm.celery import app
+from viewsfer.celery import app
 from agents.models import Agent, AgentOutage
 from core.models import CoreSettings
 

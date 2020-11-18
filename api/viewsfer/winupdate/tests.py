@@ -1,4 +1,4 @@
-from tacticalrmm.test import TacticalTestCase
+from viewsfer.test import ViewsferTestCase
 from .serializers import UpdateSerializer
 from model_bakery import baker
 from itertools import cycle
@@ -6,7 +6,7 @@ from unittest.mock import patch
 from .models import WinUpdate
 
 
-class TestWinUpdateViews(TacticalTestCase):
+class TestWinUpdateViews(ViewsferTestCase):
     def setUp(self):
         self.authenticate()
         self.setup_coresettings()
@@ -103,7 +103,7 @@ class TestWinUpdateViews(TacticalTestCase):
         self.check_not_authenticated("patch", url)
 
 
-class WinupdateTasks(TacticalTestCase):
+class WinupdateTasks(ViewsferTestCase):
     def setUp(self):
         self.setup_coresettings()
 

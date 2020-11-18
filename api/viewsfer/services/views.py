@@ -11,7 +11,7 @@ from checks.models import Check
 
 from .serializers import ServicesSerializer
 
-from tacticalrmm.utils import notify_error
+from viewsfer.utils import notify_error
 
 logger.configure(**settings.LOG_CONFIG)
 

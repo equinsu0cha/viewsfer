@@ -1,8 +1,8 @@
 {
-    "python.pythonPath": "api/tacticalrmm/env/bin/python",
+    "python.pythonPath": "api/viewsfer/env/bin/python",
     "python.languageServer": "Pylance",
     "python.analysis.extraPaths": [
-        "api/tacticalrmm"
+        "api/viewsfer"
     ],
     "python.analysis.typeCheckingMode": "basic",
     "python.formatting.provider": "black",

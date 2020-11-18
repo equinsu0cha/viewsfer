@@ -1,11 +1,11 @@
-from tacticalrmm.test import TacticalTestCase
+from viewsfer.test import ViewsferTestCase
 from .serializers import CheckSerializer
 
 from model_bakery import baker
 from itertools import cycle
 
 
-class TestCheckViews(TacticalTestCase):
+class TestCheckViews(ViewsferTestCase):
     def setUp(self):
         self.authenticate()
 

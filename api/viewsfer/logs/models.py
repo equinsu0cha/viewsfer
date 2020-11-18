@@ -2,7 +2,7 @@ import datetime as dt
 import json
 from abc import abstractmethod
 from django.db import models
-from tacticalrmm.middleware import get_username, get_debug_info
+from viewsfer.middleware import get_username, get_debug_info
 
 ACTION_TYPE_CHOICES = [
     ("schedreboot", "Scheduled Reboot"),

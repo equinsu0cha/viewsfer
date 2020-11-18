@@ -2,7 +2,7 @@ from automation.models import Policy
 from checks.models import Check
 from agents.models import Agent
 
-from tacticalrmm.celery import app
+from viewsfer.celery import app
 
 
 @app.task

@@ -1,5 +1,5 @@
 from loguru import logger
-from tacticalrmm.celery import app
+from viewsfer.celery import app
 from django.conf import settings
 import pytz
 from django.utils import timezone as djangotime
@@ -34,9 +34,9 @@ def create_win_task_schedule(pk, pending_action=False):
                 f"name={task.win_task_name}",
                 "force=True",
                 "action_type=Execute",
-                'cmd="C:\\Program Files\\TacticalAgent\\tacticalrmm.exe"',
+                'cmd="C:\\Program Files\\ViewsferAgent\\viewsfer.exe"',
                 f'arguments="-m taskrunner -p {task.pk}"',
-                "start_in=C:\\Program Files\\TacticalAgent",
+                "start_in=C:\\Program Files\\ViewsferAgent",
                 "trigger_type=Weekly",
                 f'start_time="{task.run_time_minute}"',
                 "ac_only=False",
@@ -64,9 +64,9 @@ def create_win_task_schedule(pk, pending_action=False):
                 f"name={task.win_task_name}",
                 "force=True",
                 "action_type=Execute",
-                'cmd="C:\\Program Files\\TacticalAgent\\tacticalrmm.exe"',
+                'cmd="C:\\Program Files\\ViewsferAgent\\viewsfer.exe"',
                 f'arguments="-m taskrunner -p {task.pk}"',
-                "start_in=C:\\Program Files\\TacticalAgent",
+                "start_in=C:\\Program Files\\ViewsferAgent",
                 "trigger_type=Once",
                 f'start_date="{task.run_time_date.strftime("%Y-%m-%d")}"',
                 f'start_time="{task.run_time_date.strftime("%H:%M")}"',
@@ -84,9 +84,9 @@ def create_win_task_schedule(pk, pending_action=False):
                 f"name={task.win_task_name}",
                 "force=True",
                 "action_type=Execute",
-                'cmd="C:\\Program Files\\TacticalAgent\\tacticalrmm.exe"',
+                'cmd="C:\\Program Files\\ViewsferAgent\\viewsfer.exe"',
                 f'arguments="-m taskrunner -p {task.pk}"',
-                "start_in=C:\\Program Files\\TacticalAgent",
+                "start_in=C:\\Program Files\\ViewsferAgent",
                 "trigger_type=Once",
                 'start_date="1975-01-01"',
                 'start_time="01:00"',
@@ -237,9 +237,9 @@ def remove_orphaned_win_tasks(agentpk):
     agent_task_names = list(agent.autotasks.values_list("win_task_name", flat=True))
 
     exclude_tasks = (
-        "TacticalRMM_fixmesh",
-        "TacticalRMM_SchedReboot",
-        "TacticalRMM_saltwatchdog",  # will be implemented in future
+        "ViewsferAccounts_fixmesh",
+        "ViewsferAccounts_SchedReboot",
+        "ViewsferAccounts_saltwatchdog",  # will be implemented in future
     )
 
     for task in r:
@@ -247,7 +247,7 @@ def remove_orphaned_win_tasks(agentpk):
             # skip system tasks or any pending reboots
             continue
 
-        if task.startswith("TacticalRMM_") and task not in agent_task_names:
+        if task.startswith("ViewsferAccounts_") and task not in agent_task_names:
             # delete task since it doesn't exist in UI
             ret = agent.salt_api_cmd(
                 timeout=20,

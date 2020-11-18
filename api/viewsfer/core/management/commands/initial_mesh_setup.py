@@ -37,7 +37,7 @@ class Command(BaseCommand):
                             json.dumps(
                                 {
                                     "action": "createmesh",
-                                    "meshname": "TacticalRMM",
+                                    "meshname": "ViewsferAccounts",
                                     "meshtype": 2,
                                     "responseid": "python",
                                 }

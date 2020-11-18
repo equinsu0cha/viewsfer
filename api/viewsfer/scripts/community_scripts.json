@@ -65,8 +65,8 @@
     {
         "filename": "Rename-Installed-App.ps1",
         "submittedBy": "https://github.com/bradhawkins85",
-        "name": "Rename Tactical RMM Agent",
-        "description": "Updates the DisplayName registry entry for the Tactical RMM windows agent to your desired name. This script takes 1 required argument: the name you wish to set.",
+        "name": "Rename Viewsfer RMM Agent",
+        "description": "Updates the DisplayName registry entry for the Viewsfer RMM windows agent to your desired name. This script takes 1 required argument: the name you wish to set.",
         "shell": "powershell"
     },
     {

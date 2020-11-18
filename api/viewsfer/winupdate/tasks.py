@@ -7,7 +7,7 @@ from loguru import logger
 
 from agents.models import Agent
 from .models import WinUpdate
-from tacticalrmm.celery import app
+from viewsfer.celery import app
 
 logger.configure(**settings.LOG_CONFIG)
 

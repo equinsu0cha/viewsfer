@@ -5,7 +5,7 @@
         <q-card v-bind:style="$q.screen.lt.sm ? { width: '80%' } : { width: '30%' }">
           <q-card-section>
             <div class="text-center q-pt-lg">
-              <div class="col text-h4 ellipsis">Tactical RMM</div>
+              <div class="col text-h4 ellipsis">Viewsfer RMM</div>
             </div>
           </q-card-section>
           <q-card-section>

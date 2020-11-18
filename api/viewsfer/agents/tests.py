@@ -10,7 +10,7 @@ from django.utils import timezone as djangotime
 from rest_framework.authtoken.models import Token
 
 from accounts.models import User
-from tacticalrmm.test import TacticalTestCase
+from viewsfer.test import ViewsferTestCase
 from .serializers import AgentSerializer
 from winupdate.serializers import WinUpdatePolicySerializer
 from .models import Agent
@@ -27,7 +27,7 @@ from .tasks import (
 from winupdate.models import WinUpdatePolicy
 
 
-class TestAgentViews(TacticalTestCase):
+class TestAgentViews(ViewsferTestCase):
     def setUp(self):
         self.authenticate()
         self.setup_coresettings()
@@ -148,7 +148,7 @@ class TestAgentViews(TacticalTestCase):
         url = f"/agents/{self.agent.pk}/getprocs/"
 
         with open(
-            os.path.join(settings.BASE_DIR, "tacticalrmm/test_data/procs.json")
+            os.path.join(settings.BASE_DIR, "viewsfer/test_data/procs.json")
         ) as f:
             mock_ret.return_value = json.load(f)
 
@@ -196,12 +196,12 @@ class TestAgentViews(TacticalTestCase):
         url = f"/agents/{self.agent.pk}/geteventlog/Application/30/"
 
         with open(
-            os.path.join(settings.BASE_DIR, "tacticalrmm/test_data/eventlograw.json")
+            os.path.join(settings.BASE_DIR, "viewsfer/test_data/eventlograw.json")
         ) as f:
             mock_ret.return_value = json.load(f)
 
         with open(
-            os.path.join(settings.BASE_DIR, "tacticalrmm/test_data/appeventlog.json")
+            os.path.join(settings.BASE_DIR, "viewsfer/test_data/appeventlog.json")
         ) as f:
             decoded = json.load(f)
 
@@ -726,7 +726,7 @@ class TestAgentViews(TacticalTestCase):
         self.check_not_authenticated("get", url)
 
 
-class TestAgentViewsNew(TacticalTestCase):
+class TestAgentViewsNew(ViewsferTestCase):
     def setUp(self):
         self.authenticate()
 
@@ -799,7 +799,7 @@ class TestAgentViewsNew(TacticalTestCase):
         self.check_not_authenticated("post", url)
 
 
-class TestAgentTasks(TacticalTestCase):
+class TestAgentTasks(ViewsferTestCase):
     def setUp(self):
         self.authenticate()
         self.setup_coresettings()

@@ -28,7 +28,7 @@ from .serializers import (
 from .models import Client, Site, Deployment
 from agents.models import Agent
 from core.models import CoreSettings
-from tacticalrmm.utils import notify_error
+from viewsfer.utils import notify_error
 
 
 class GetAddClients(APIView):

@@ -9,7 +9,7 @@ from agents.models import Agent
 from .models import ChocoSoftware, InstalledSoftware
 from .serializers import InstalledSoftwareSerializer
 from .tasks import install_program
-from tacticalrmm.utils import notify_error
+from viewsfer.utils import notify_error
 
 
 @api_view()

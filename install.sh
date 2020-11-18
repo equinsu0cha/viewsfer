@@ -98,7 +98,7 @@ if echo "$IPV4" | grep -qE '^(10\.|172\.1[6789]\.|172\.2[0-9]\.|172\.3[01]\.|192
 fi
 
 echo -ne "${YELLOW}Create a username for console${NC}: "
-read $
+
 
 sudo apt install -y software-properties-common
 sudo apt update
@@ -183,7 +183,7 @@ sudo systemctl restart mongod
 
 print_green 'Installing Console'
 
-sudo mkdir -p /console/console-data
+sudo mkdir -p /console/meshcentral-data
 sudo chown ${USER}:${USER} -R /console
 cd /console
 npm install meshcentral
@@ -265,7 +265,7 @@ sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE viewsfer TO ${VSF_USR
 # sudo chown ${USER}:${USER} /accounts
 # sudo mkdir -p /var/log/celery
 # sudo chown ${USER}:${USER} /var/log/celery
-# git clone https://github.com/wh1te909/tacticalrmm.git /accounts/
+# git clone https://github.com/wh1te909/viewsfer.git /accounts/
 cd /accounts
 
 

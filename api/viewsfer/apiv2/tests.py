@@ -1,10 +1,10 @@
-from tacticalrmm.test import TacticalTestCase
+from viewsfer.test import ViewsferTestCase
 from unittest.mock import patch
 from model_bakery import baker
 from itertools import cycle
 
 
-class TestAPIv2(TacticalTestCase):
+class TestAPIv2(ViewsferTestCase):
     def setUp(self):
         self.authenticate()
         self.setup_coresettings()

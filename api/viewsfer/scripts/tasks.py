@@ -1,4 +1,4 @@
-from tacticalrmm.celery import app
+from viewsfer.celery import app
 from agents.models import Agent
 from .models import Script
 

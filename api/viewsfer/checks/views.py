@@ -4,7 +4,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
-from tacticalrmm.utils import notify_error
+from viewsfer.utils import notify_error
 from agents.models import Agent
 from automation.models import Policy
 

@@ -33,7 +33,7 @@ from agents.tasks import (
 from winupdate.tasks import check_for_updates_task
 from software.tasks import get_installed_software, install_chocolatey
 from checks.utils import bytes2human
-from tacticalrmm.utils import notify_error
+from viewsfer.utils import notify_error
 
 logger.configure(**settings.LOG_CONFIG)
 

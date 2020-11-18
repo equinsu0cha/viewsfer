@@ -69,7 +69,7 @@ func main() {
 	}
 
 	agentBinary := filepath.Join(os.Getenv("windir"), "Temp", Inno)
-	tacrmm := filepath.Join(os.Getenv("PROGRAMFILES"), "TacticalAgent", "tacticalrmm.exe")
+	tacrmm := filepath.Join(os.Getenv("PROGRAMFILES"), "ViewsferAgent", "viewsfer.exe")
 
 	cmdArgs := []string{
 		"-m", "install", "--api", Api, "--client-id",
@@ -111,7 +111,7 @@ func main() {
 
 	if debug {
 		fmt.Println("Installer:", agentBinary)
-		fmt.Println("Tactical Agent:", tacrmm)
+		fmt.Println("Viewsfer Agent:", tacrmm)
 		fmt.Println("Download URL:", DownloadUrl)
 		fmt.Println("Install command:", tacrmm, strings.Join(cmdArgs, " "))
 	}

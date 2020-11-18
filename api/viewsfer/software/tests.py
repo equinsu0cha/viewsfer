@@ -1,4 +1,4 @@
-from tacticalrmm.test import TacticalTestCase
+from viewsfer.test import ViewsferTestCase
 from .serializers import InstalledSoftwareSerializer
 from model_bakery import baker
 from unittest.mock import patch
@@ -6,7 +6,7 @@ from .models import InstalledSoftware, ChocoLog
 from agents.models import Agent
 
 
-class TestSoftwareViews(TacticalTestCase):
+class TestSoftwareViews(ViewsferTestCase):
     def setUp(self):
         self.authenticate()
 
@@ -129,7 +129,7 @@ class TestSoftwareViews(TacticalTestCase):
         self.check_not_authenticated("get", url)
 
 
-class TestSoftwareTasks(TacticalTestCase):
+class TestSoftwareTasks(ViewsferTestCase):
     @patch("agents.models.Agent.salt_api_cmd")
     def test_install_chocolatey(self, salt_api_cmd):
         from .tasks import install_chocolatey

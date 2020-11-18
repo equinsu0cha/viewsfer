@@ -13,7 +13,7 @@ from agents.models import Agent
 from .models import WinUpdate
 from .serializers import UpdateSerializer, ApprovedUpdateSerializer
 from .tasks import check_for_updates_task
-from tacticalrmm.utils import notify_error
+from viewsfer.utils import notify_error
 
 
 @api_view()

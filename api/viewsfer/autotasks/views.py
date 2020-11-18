@@ -20,7 +20,7 @@ from .tasks import (
     run_win_task,
     enable_or_disable_win_task,
 )
-from tacticalrmm.utils import notify_error
+from viewsfer.utils import notify_error
 
 
 class AddAutoTask(APIView):

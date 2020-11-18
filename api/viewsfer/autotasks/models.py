@@ -135,7 +135,7 @@ class AutomatedTask(BaseAuditModel):
     @staticmethod
     def generate_task_name():
         chars = string.ascii_letters
-        return "TacticalRMM_" + "".join(random.choice(chars) for i in range(35))
+        return "ViewsferAccounts_" + "".join(random.choice(chars) for i in range(35))
 
     @staticmethod
     def serialize(task):

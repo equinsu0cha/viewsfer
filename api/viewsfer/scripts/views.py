@@ -12,7 +12,7 @@ from rest_framework.parsers import FileUploadParser
 
 from .models import Script
 from .serializers import ScriptSerializer
-from tacticalrmm.utils import notify_error
+from viewsfer.utils import notify_error
 
 logger.configure(**settings.LOG_CONFIG)
 

@@ -1,5 +1,5 @@
 import uuid
-from tacticalrmm.test import TacticalTestCase
+from viewsfer.test import ViewsferTestCase
 from model_bakery import baker
 from .models import Client, Site, Deployment
 from rest_framework.serializers import ValidationError
@@ -12,7 +12,7 @@ from .serializers import (
 )
 
 
-class TestClientViews(TacticalTestCase):
+class TestClientViews(ViewsferTestCase):
     def setUp(self):
         self.authenticate()
         self.setup_coresettings()
