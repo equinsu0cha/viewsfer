@@ -157,14 +157,6 @@ print_green 'Installing Nginx'
 sudo apt install -y nginx
 sudo systemctl stop nginx
 
-print_green 'Installing server_names_hash_bucket_size 128'
-hash_bucket_size="$(cat << EOF
-server_names_hash_bucket_size = "128"
-EOF
-)"
-echo "${hash_bucket_size}" | tee --append /etc/nginx/nginx.conf > /dev/null
-
-
 print_green 'Installing NodeJS'
 
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
@@ -206,7 +198,7 @@ meshcfg="$(cat << EOF
     "AgentPong": 300,
     "AllowHighQualityDesktop": true,
     "TlsOffload": "127.0.0.1",
-	"Plugins": { "enabled": true }
+	"Plugins": { "enabled": true },
     "MaxInvalidLogin": { "time": 5, "count": 5, "coolofftime": 30 }
   },
   "domains": {
@@ -664,14 +656,14 @@ sudo chown ${USER}:${USER} -R /etc/conf.d/
 
 meshservice="$(cat << EOF
 [Unit]
-Description=MeshCentral Server
+Description=Console Server
 After=network.target
 After=mongod.service
 After=nginx.service
 [Service]
 Type=simple
 LimitNOFILE=1000000
-ExecStart=/usr/bin/node node_modules/console
+ExecStart=/usr/bin/node node_modules/meshcentral
 Environment=NODE_ENV=production
 WorkingDirectory=/console
 User=${USER}
@@ -810,6 +802,12 @@ source /accounts/api/env/bin/activate
 python manage.py initial_db_setup
 deactivate
 
+print_green 'Installing server_names_hash_bucket_size 128'
+hash_bucket_size="$(cat << EOF
+server_names_hash_bucket_size 128
+EOF
+)"
+echo "${hash_bucket_size}" | sudo tee --append /etc/nginx/nginx.conf > /dev/null
 
 print_green 'Restarting services'
 for i in celery.service celerybeat.service celery-winupdate.service accounts.service
