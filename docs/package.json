@@ -1,6 +1,6 @@
 {
-  "name": "tacticalrmm",
-  "description": "A remote monitoring and management tool",
+  "name": "viewsfer",
+  "description": "Remote monitoring and management tool",
   "private": true,
   "version": "0.0.1",
   "scripts": {
